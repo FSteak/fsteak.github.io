@@ -12,12 +12,9 @@ jobs:
         runs-on: ubuntu-latest
         
         steps:
-            - name: RSS Feed
+            - name: Default metrics
               uses: lowlighter/metrics@latest
               with:
-                filename: metrics.plugin.rss.svg
-                token: NOT_NEEDED
-                base: ""
-                plugin_rss: yes
-                plugin_rss_source: https://news.ycombinator.com/rss
-                plugin_rss_limit: 5
+                filename: metrics.base.svg
+                token: ${{ secrets.METRICS_TOKEN }}
+                base: header, activity, community, repositories, metadata
